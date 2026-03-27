@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>苏州厕所查找器</title>
+</head>
+<body>
+  <h1>苏州厕所查找器</h1>
+  <p>数据加载中...</p>
+  <script>
+    fetch('./toilets.json')
+      .then(r => r.json())
+      .then(d => document.body.innerHTML += `<p>共 ${d.length} 个厕所数据</p>`)
+      .catch(e => document.body.innerHTML += `<p>加载失败: ${e}</p>`)
+  </script>
+</body>
+</html>
